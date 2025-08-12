@@ -27,31 +27,50 @@
 ### 1.2 주요 기능
 
  
-- 그룹 생성,수정,삭제
-- 그룹 목록 조회,상세 조회
-- 그룹 추천, 추천 취소
-- 그룹 참여, 참여 취소
+- 인증 API
+- 유저 API
+- 차량 API
+- 고객 API
  
-- 운동 기록 등록
-- 운동 기록 목록 조회
-- 운동 기록 랭킹 조회
+- 회사 API
+- 계약 API
+- 계약서 API
   
-- 태그 목록 조회, 상세 조회
-- 이미지 업로드 
+- 대시보드 API
+- 이미지 API 
 ---
  
 # 2. ⚙️ 기술 스택 및 협업 도구
  
  
-| **분류** | **사용 예정 도구** |
-| :------ | :----------------- |
-| Backend | Node.js 22.0.0LTS (Express) |
-| Database | Prisma, PostgreSQL |
-| 테스트 | Postman |
-| API 문서화 | Swagger |
-| 협업 도구 | Discord, GitHub ([singnyeo/nb02-seven-team2](https://github.com/singnyeo/nb02-seven-team2)), Notion ([📚 프로젝트 세부 계획](https://www.notion.so/206fca01d5c980689666cc5d59fbef08?pvs=21)) |
-| 일정 관리 | GitHub Issues, Notion |
- 
+<h3 align="center"><b>📚 Languages 📚</b></h3>
+
+<p align="center"> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" /> 
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" /> </p>
+
+<h3 align="center"><b>⚙️ Frameworks & Libraries</b></h3>
+
+<p align="center"> <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" /> <img src="https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white" /><br/>  <img src="https://img.shields.io/badge/Passport-34E27A?style=for-the-badge&logo=passport&logoColor=white" /> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" /> <img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" /> <img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black" /> </p>
+
+<h3 align="center"><b>🗄️ Database & Hosting</b></h3>
+
+<p align="center"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/Render-0099E5?style=for-the-badge&logo=render&logoColor=white" /> </p>
+
+<h3 align="center"><b>🔧 Development Tools </b></h3>
+
+<p align="center"> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /> <img src="https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge&logo=nodemon&logoColor=white" /> <img src="https://img.shields.io/badge/TS Node-3178C6?style=for-the-badge&logo=ts-node&logoColor=white" /> <img src="https://img.shields.io/badge/Dotenv-ECD53F?style=for-the-badge&logo=dotenv&logoColor=black" /> </p>
+
+
+<h3 align="center"><b>🔐 Authentication & Utility Libraries </b></h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white" alt="JWT" />
+  <img src="https://img.shields.io/badge/Nodemailer-009966?style=for-the-badge&logo=gmail&logoColor=white" alt="Nodemailer" />
+  <img src="https://img.shields.io/badge/Multer-1E90FF?style=for-the-badge&logo=files&logoColor=white" alt="Multer" />
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />
+</p>
+
+<h3 align="center"><b> 🤝 Collaboration Tools </b></h3>
+<p align="center"> <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white" alt="Notion" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /> </p>
 ---
  
 # 3. 📌 담당한 작업 
