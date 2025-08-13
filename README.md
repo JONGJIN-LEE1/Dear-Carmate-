@@ -123,7 +123,7 @@
 - 계약서를 추가로 등록할 수 있습니다.
 - 계약 수정 API를 활용해서 구현해주세요.
 
-
+---
 
 ### 3.8 계약서 목록 조회
 
@@ -131,6 +131,12 @@
 - 계약서명, 계약체결일, 문서 수, 담당자, 차량번호가 표시됩니다.
 - 페이지네이션이 가능합니다.
 - 계약서명, 담당자로 검색이 가능합니다.
+
+---
+
+### 3.9 중간 발표 준비
+[중간발표 자료.pdf](https://github.com/user-attachments/files/21747907/default.pdf)
+
 
 # 4. 📌 개발 예시  
 
@@ -366,12 +372,9 @@
 https://nb02-dear-carmate-be03.onrender.com/api-docs/
 ```
 
-### 4.12 중간 발표 준비
-
-[중간발표 자료.pdf](https://github.com/user-attachments/files/21747835/default.pdf)
 
 
----
+
 
 
 
