@@ -514,24 +514,43 @@ https://nb02-dear-carmate-be03.onrender.com/api-docs/
 
 # 6. 📌 문제점 및 해결 과정  
 
-### 6.1 git pull upstream main을 진행하지 않고 로컬에서 작업하다 충돌  
+### 6.1 고객 목록이 프론트랑 연동했을 때 빈 칸으로 뜨는 문제 
 
-: git stash를 이용하여 임시 저장하고 난 다음 git pull upstream main 진행, 
-  후에 충돌 마커 확인하면서 충돌 해결  
+: API 명세서에는
+page,
+pageSize,
+searchBy,
+keyword 순으로 파라미터를 받는데,
+파라미터 순서를 안 맞췄음
+
+-> page,
+pageSize,
+keyword,
+searchBy 순으로 되어 있는 걸 명세서대로 순서 바꿈
+
 
 ---  
 
-### 6.2 코딩 컨벤션 맞추는 데 어려움을 느낌(필드명 통일이나 대소문자 통합 등)  
+### 6.2 프론트엔드와 연동했을 때 고객 등록 오류 발생
 
-: 데일리 스크럼 외에도 주기적으로 팀원들과 소통하며 맞추려고 노력  
+: Prisma의 @map 디렉티브는 데이터베이스에 저장될 때의 값만 변경하고, TypeScript/JavaScript 코드에서는 여전히 enum 이름(MALE, FEMALE 등)을 사용해야 함. 그래서 API가 한글 입력을 받지 못하는 문제가 발생
+
+
+-> DTO에 Transform 데코레이터 추가: 한글 입력을 받아서 Prisma enum 값으로 자동 변환
+유연한 입력 처리: 한글("남성"), 영어 소문자("male"), 영어 대문자("MALE") 모두 허용하도록 변경
+
+
 
 ---  
 
 
-### 6.3 커밋을 잔뜩 쌓아두고 진행하다가 충돌이 났는데, 충돌 발견도 어려울 뿐더러 해결도 힘듦  
+### 6.3 class-validator 와 Joi 차이
 
 
-: 해당 PR을 닫은 후, 새로 처음부터 다시 시작  
+: 유효성 검사 관련해서 class-validator 와 Joi 중 어떤 방식인지 팀원들과 토론 및 합의를 진행하지 않아서
+각자 다른 방식으로 작성
+
+-> 중간에 데일리스크럼으로 회의 진행 후 class-validator 방식으로 선정
 
 ---  
 
