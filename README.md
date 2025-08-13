@@ -221,7 +221,7 @@
 
 
 
-### 4.4 고객 삭제제
+### 4.4 고객 삭제
 
 - API URL(DELETE /customers/{customerId}) & 요청 예시
   
@@ -236,6 +236,35 @@
 <img width="843" height="539" alt="고객 삭제" src="https://github.com/user-attachments/assets/c53a6439-9a28-4d72-b57b-684c0e40db1e" />
 
 
+### 4.5 고객 상세 정보 조회
+
+- API URL(GET /customers/{customerId}) & 요청 예시
+```
+{
+	"id": 123,
+	"name": "string",
+	"gender": "male | female",
+	"phoneNumber": "string",
+	"ageGroup": "10대 | 20대 | 30대 | 40대 | 50대 | 60대 | 70대 | 80대",
+	"region": "서울 | 경기 | 인천 | 강원 | 충북 | 충남 | 세종 | 대전 | 전북 | 전남 | 광주 | 경북 | 경남 | 대구 | 울산 | 부산 | 제주",
+	"email": "string",
+	"memo": "string",
+	"contractCount": 0
+}
+```
+
+<img width="853" height="647" alt="고객 상세 조회" src="https://github.com/user-attachments/assets/0cff8054-5c01-401e-b614-bcd1cba68506" />
+
+### 4.6 고객 데이터 대용량 업로드
+
+- API URL(POST /customers/upload) & 요청 예시
+
+```
+{
+	"message": "성공적으로 등록되었습니다"
+}
+```
+<img width="869" height="517" alt="고객 대용량 업로드" src="https://github.com/user-attachments/assets/fd0237b7-4f7a-4522-8b24-bb7091f25266" />
 
 ---
 
