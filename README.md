@@ -555,9 +555,17 @@ searchBy 순으로 되어 있는 걸 명세서대로 순서 바꿈
 ---  
 
 
-### 6.4 GroupRecommend 모델과 Participant 모델에 unique가 없어서 에러 발생  
+### 6.4 tsconfig에서 [any] 타입을 쓰지 않는 것으로 설정, 그러나 작업하다보면 암시적으로 'any' 형식이 포함되는 경우 발생
+: tsconfig 설정을 멘토님이 평소에 실무에서 사용하시는 걸로 받아와서 사용했는데, 생각보다 엄격해서 [any] 타입을 아예 쓰지 않게 설정된 것을 확인
 
-: [@@unique([groupId, userId]) // 복합 유니크 제약 조건 추가로 에러 해결  
+-> 타입을 명확하게 지정하거나 타입 추론을 사용해서 해결, 변수를 선언할 때 가능한 한 초기값을 줘서 타입 추론이 가능하도록 변경
+```
+// 암시적 any 발생
+let count; // ❌
+
+// 타입 추론 (number로 자동 인식)
+let count = 0; // ✅
+```
 
 --- 
 
@@ -567,21 +575,14 @@ searchBy 순으로 되어 있는 걸 명세서대로 순서 바꿈
 
 : 경로를 파일명과 일치하게 mock로 변경  
 
-
-```
-const { GROUPS, TAGS, USERS, EXERCISE_RECORDS, GROUP_RECOMMENDS, RANKS, PHOTOS, PARTICIPANT } = require('./mockData');
-```
-```
-const { GROUPS, TAGS, USERS, EXERCISE_RECORDS, GROUP_RECOMMENDS, RANKS, PHOTOS, PARTICIPANT } = require('./mock');
-```
-
 ---  
 
 
-### 6.6 swagger 테스트 중 postman과 newman 등을 이용하여 자동 테스트가 안되는 문제  
+### 6.6 swagger 라우터 주석 달고 로컬에서 테스트할 때 오류 발생 
 
-: swagger 폴더에 swagger.js(info, title 내용 들어있는 부분)와 // Swagger/OpenAPI 문서를 JavaScript 객체로 조립하는 구조 openapi.yaml(summary 내용 들어있는 부분) 이렇게 두 파일로 나눴는데, 하나의 파일로 합침
+: swagger 문서 작성하고 각 라우터 별 파일에 주석을 달았는데, 오류 발생
 
+-> 들여쓰기, 띄어쓰기를 제대로 진행하니 해결
 ---
 
 
