@@ -359,6 +359,10 @@
 https://nb02-dear-carmate-be03.onrender.com/api-docs/
 ```
 
+### 4.12 중간 발표 준비
+
+[중간발표 자료.pdf](https://github.com/user-attachments/files/21747835/default.pdf)
+
 
 ---
 
