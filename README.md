@@ -367,11 +367,6 @@
 
 
 
-### 4.11 swagger 문서 작성 및 배포
-```
-https://nb02-dear-carmate-be03.onrender.com/api-docs/
-```
-
 
 
 
