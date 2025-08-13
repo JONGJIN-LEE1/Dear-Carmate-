@@ -76,7 +76,7 @@
 # 3. 📌 담당한 작업 
 
  
-### 3.1 고객 등
+### 3.1 고객 등록
 
 - 고객명, 성별, 연락처, 연령대, 지역, 이메일, 메모를 입력하여 고객 등록이 가능합니다.
 - 연령대, 지역, 이메일, 메모는 선택 사항입니다.
@@ -128,166 +128,113 @@
 # 4. 📌 개발 예시  
 
 
-### 4.1 그룹 목록 조회  
+### 4.1 고객 등록  
 
-- API URL(POST /groups/:groupId/likes) & 요청 예시(http://localhost:3000/groups?page=1&limit=10&orderBy=createdAt&order=desc)
+- API URL(POST /customers) & 요청 예시
   
-- 응답 예시 (200 OK)
+- 응답 예시 (201 Created)
  ```
  {
-    "data": [
-        {
-            "id": 1,
-            "name": "헬스마스터",
-            "description": "",
-            "photoUrl": "https://example.com/healthmaster.jpg",
-            "goalRep": 10,
-            "discordWebhookUrl": "",
-            "discordInviteUrl": "",
-            "likeCount": 3,
-            "tags": [
-                "헬스",
-                "웨이트트레이닝",
-                "근력운동",
-                "피트니스"
-            ],
-            "owner": {
-                "id": 1,
-                "nickname": "user1",
-                "createdAt": 1750066272982,
-                "updatedAt": 1750066272982
-            },
-            "participants": [
-                {
-                    "id": 1,
-                    "nickname": "user1",
-                    "createdAt": 1750066272982,
-                    "updatedAt": 1750066272982
-                },
-                {
-                    "id": 6,
-                    "nickname": "user6",
-                    "createdAt": 1750066272982,
-                    "updatedAt": 1750066272982
-                },
-                {
-                    "id": 11,
-                    "nickname": "user11",
-                    "createdAt": 1750066272982,
-                    "updatedAt": 1750066272982
-                },
-                {
-                    "id": 16,
-                    "nickname": "user16",
-                    "createdAt": 1750066272982,
-                    "updatedAt": 1750066272982
-                }
-            ],
-            "createdAt": 1750066272986,
-            "updatedAt": 1750066272986,
-            "badges": []
-        },
+	"id": 123,
+	"name": "string",
+	"gender": "male | female",
+	"phoneNumber": "string",
+	"ageGroup": "10대 | 20대 | 30대 | 40대 | 50대 | 60대 | 70대 | 80대",
+	"region": "서울 | 경기 | 인천 | 강원 | 충북 | 충남 | 세종 | 대전 | 전북 | 전남 | 광주 | 경북 | 경남 | 대구 | 울산 | 부산 | 제주",
+	"email": "string",
+	"memo": "string",
+	"contractCount": 0
+}
 ```
-  ![그룹 목록조회](https://github.com/user-attachments/assets/c2243fb4-86f3-4f47-a794-75b8daf44b38)
+  
+<img width="835" height="641" alt="고객 등록" src="https://github.com/user-attachments/assets/11a3ce6c-ab9e-450e-b127-33500e8c6ab8" />
 
 
 
-### 4.2 그룹 상세 조회  
+### 4.2 고객 목록 조회  
 
-- API URL(GET  /groups/:groupId) & 요청 예시(http://localhost:3000/groups/4)
+- API URL(GET  고객	/customers) & 요청 예시
   
 - 응답 예시 (200 OK)
 ```
 {
-"id": 4,
-"name": "자전거여행",
-"description": "자전거로 전국을 누비는 사람들",
-"photoUrl": "https://example.com/bikeclub.jpg",
-"goalRep": 15,
-"discordWebhookUrl": "https://discord.gg/bikeclub",
-"discordInviteUrl": "https://discord.gg/invitebike",
-"likeCount": 2,
-"tags": [
-"자전거",
-"사이클링",
-"여행",
-"아웃도어"
-],
-"owner": {
-"id": 4,
-"nickname": "user4",
-"createdAt": 1750080053488,
-"updatedAt": 1750080053488
-},
-"participants": [
-{
-"id": 4,
-"nickname": "user4",
-"createdAt": 1750080053488,
-"updatedAt": 1750080053488
-},
-{
-"id": 9,
-"nickname": "user9",
-"createdAt": 1750080053488,
-"updatedAt": 1750080053488
-},
-{
-"id": 14,
-"nickname": "user14",
-"createdAt": 1750080053488,
-"updatedAt": 1750080053488
-},
-{
-"id": 19,
-"nickname": "user19",
-"createdAt": 1750080053488,
-"updatedAt": 1750080053488
-}
-],
-"createdAt": 1750080053504,
-"updatedAt": 1750080053504,
-"badges": []
+	"currentPage": 1,
+	"totalPages": 5,
+	"totalItemCount": 50,
+	"data": [
+		{
+			"id": 1,
+			"name": "string",
+			"gender": "male | female",
+			"phoneNumber": "string",
+			"ageGroup": "10대 | 20대 | 30대 | 40대 | 50대 | 60대 | 70대 | 80대",
+			"region": "서울 | 경기 | 인천 | 강원 | 충북 | 충남 | 세종 | 대전 | 전북 | 전남 | 광주 | 경북 | 경남 | 대구 | 울산 | 부산 | 제주",
+			"email": "string",
+			"memo": "string",
+			"contractCount": 0
+		},
+		{
+			"id": 2,
+			"name": "string",
+			"gender": "male | female",
+			"phoneNumber": "string",
+			"ageGroup": "10대 | 20대 | 30대 | 40대 | 50대 | 60대 | 70대 | 80대",
+			"region": "서울 | 경기 | 인천 | 강원 | 충북 | 충남 | 세종 | 대전 | 전북 | 전남 | 광주 | 경북 | 경남 | 대구 | 울산 | 부산 | 제주",
+			"email": "string",
+			"memo": "string",
+			"contractCount": 0
+		}
+	],
 }
 ```
   
-![그룹 상세조회](https://github.com/user-attachments/assets/6d153a26-3d24-4967-be26-5d34ca0ef667)
+<img width="841" height="683" alt="고객 목록 조회" src="https://github.com/user-attachments/assets/69cd4b86-918d-4c4b-b06e-ec8de73b93b4" />
 
 
 
 
-### 4.3 그룹 추천  
 
-- API URL(POST /groups/:groupId/likes) & 요청 예시(http://localhost:3000/groups/6/likes)
+### 4.3 고객 수정
+
+- API URL(PATCH /customers/{customerId}) & 요청 예시
   
-- 응답 예시 (409 Conflict)
+- 응답 예시 (200 OK)
 
   
 ```
 {
-"success": false,
-"message": "이미 추천한 그룹입니다.",
+	"id": 123,
+	"name": "string",
+	"gender": "male | female",
+	"phoneNumber": "string",
+	"ageGroup": "10대 | 20대 | 30대 | 40대 | 50대 | 60대 | 70대 | 80대",
+	"region": "서울 | 경기 | 인천 | 강원 | 충북 | 충남 | 세종 | 대전 | 전북 | 전남 | 광주 | 경북 | 경남 | 대구 | 울산 | 부산 | 제주",
+	"email": "string",
+	"memo": "string",
+	"contractCount": 0
 }
 ```
 
-  ![그룹 추천(에러상황)](https://github.com/user-attachments/assets/c211ccc2-71a6-45ce-9a54-b422e0b4e9dd)
+
+<img width="837" height="655" alt="고객 수정" src="https://github.com/user-attachments/assets/0fbfb5cc-e701-43a6-a949-cb84f2a7c68e" />
 
 
 
 
-### 4.4 그룹 추천 취소  
+### 4.4 고객 삭제제
 
-- API URL(DELETE /groups/:groupId/likes) & 요청 예시(http://localhost:3000/groups/1/likes)
+- API URL(DELETE /customers/{customerId}) & 요청 예시
   
 - 응답 예시 (200 OK)
   
 ```
 {
-"message": "그룹 추천을 취소했습니다."
+  "message": "고객 삭제 성공"
 }
 ```
 
- ![그룹 추천 취소](https://github.com/user-attachments/assets/12bc2d65-d157-48a9-b4fe-50dd17d046be)
+<img width="843" height="539" alt="고객 삭제" src="https://github.com/user-attachments/assets/c53a6439-9a28-4d72-b57b-684c0e40db1e" />
+
 
 
 ---
