@@ -297,8 +297,10 @@
 		...
 	]
 }
-
 ```
+<img width="850" height="605" alt="계약서 업로드 시 목록 조회" src="https://github.com/user-attachments/assets/1942db0d-c07b-4430-ad2e-cf5ab4dcc5c0" />
+
+
 ### 4.8 계약서 추가 시 계약 목록 조회
 
 - API URL(GET /contractDocuments/draft) & 요청 예시
@@ -318,6 +320,9 @@
 ]
 
 ```
+<img width="848" height="674" alt="계약서 추가용 계약 목록 조회" src="https://github.com/user-attachments/assets/9ebdb680-e591-49d8-becd-621d5b483622" />
+
+
 ### 4.9 계약서 업로드
 
 - API URL(POST /contractDocuments/upload) & 요청 예시
@@ -329,6 +334,10 @@
 }
 
 ```
+
+<img width="873" height="602" alt="계약서 업로드" src="https://github.com/user-attachments/assets/1891f7cb-3713-4ea6-8d41-fa5ea73b4772" />
+
+
 ### 4.10 계약서 다운로드
 
 - API URL(GET /contractDocuments/{contractDocumentId}/download) & 요청 예시
@@ -341,17 +350,156 @@
 
 
 ```
+<img width="859" height="658" alt="계약서 다운로드 에러 메세지" src="https://github.com/user-attachments/assets/58dc25b7-c90d-4fe4-8ff5-7cf94256fae6" />
+
+
 ---
 
 
 
-# 5. 📌 운동 기록 API 및 이미지 업로드 API 테스트 예시 
+# 5. 📌 파일 구조 
  
-[운동 기록 API 테스트 및 이미지 업로드 API 테스트] (https://www.notion.so/API-217a1c7d0d6a808b820bda0aec5623f8)
- 
-[swagger 테스트] (https://www.notion.so/Swagger-API-217a1c7d0d6a80c697afe7036a4ff731)  
-
-
+## 파일 구조 
+```
+├─ .eslintrc.json
+├─ .gitignore
+├─ .prettierrc.json
+├─ .vscode
+│  └─ setting.json
+├─ README.md
+├─ package-lock.json
+├─ package.json
+├─ prisma
+│  └─ migrations
+│  └─ schema.prisma
+│  └─ mock.ts
+│  └─ seed.ts
+├─ src
+│  ├─ @types
+│  │  └─ express
+│  │     └─ index.d.ts
+│  ├─ app.ts
+│  ├─ auth
+│  │  ├─ auth.routes.ts
+│  │  ├─ auth.ts
+│  │  ├─ controller.ts
+│  │  ├─ dto
+│  │  │  └─ login.dto.ts
+│  │  ├─ jwt.ts
+│  │  ├─ passport.ts
+│  │  ├─ repository.ts
+│  │  └─ service.ts
+│  ├─ cars
+│  │  ├─ cars.routes.ts
+│  │  ├─ controller.ts
+│  │  ├─ dto
+│  │  │  └─ create-car.dto.ts
+│  │  │  └─ get-car.dto.ts
+│  │  │  └─ update-car.dto.ts
+│  │  │  └─ upload-car.dto.ts
+│  │  ├─ repository.ts
+│  │  └─ service.ts
+│  ├─ common
+│  │  ├─ constants
+│  │  │  └─ constants.ts
+│  │  ├─ enums
+│  │  │  ├─ age-group.enum.ts
+│  │  │  ├─ car-status.enum.ts
+│  │  │  ├─ car-type.enum.ts
+│  │  │  ├─ contract-status.enum.ts
+│  │  │  ├─ gender.enum.ts
+│  │  │  └─ region.enum.ts
+│  │  ├─ errors
+│  │  │  ├─ app-error.ts
+│  │  │  ├─ bad-request-error.ts
+│  │  │  ├─ conflict-error.ts
+│  │  │  ├─ forbidden-error.ts
+│  │  │  ├─ not-found-error.ts
+│  │  │  └─ unauthorized-error.ts
+│  │  ├─ prisma
+│  │  │  └─ client.ts
+│  │  └─ utils
+│  │     ├─ custom-errors.ts
+│  │     └─ validate.dto.ts
+│  │     └─ car.converter.ts
+│  │     └─ contract.converter.ts
+│  │     └─ csv-downloader.ts
+│  │     └─ customer.converter.ts
+│  │     └─ firebase-admin.ts
+│  ├─ companies
+│  │  ├─ companies.routes.ts
+│  │  ├─ controller.ts
+│  │  ├─ dto
+│  │  │  ├─ create-company.dto.ts
+│  │  │  ├─ get-companies.dto.ts
+│  │  │  ├─ get-users.dto.ts
+│  │  │  └─ update-companies.dto.ts
+│  │  ├─ repository.ts
+│  │  └─ service.ts
+│  ├─ contract-documents
+│  │  ├─ contract-documents.routes.ts
+│  │  ├─ controller.ts
+│  │  ├─ dto
+│  │  │  ├─ download-contract-documents.dto.ts
+│  │  │  ├─ edit-contract-documents.dto.ts
+│  │  │  ├─ get-contract-documents.dto.ts
+│  │  │  └─ upload-contract-document.dto.ts
+│  │  ├─ repository.ts
+│  │  └─ service.ts
+│  ├─ contracts
+│  │  ├─ contracts.routes.ts
+│  │  ├─ controller.ts
+│  │  ├─ dto
+│  │  │  ├─ create-contract.dto.ts
+│  │  │  ├─ meeting.dto.ts
+│  │  │  └─ update-contract.dto.ts
+│  │  │  └─ update-meeting.dto.ts
+│  │  ├─ contract.mapper.ts
+│  │  ├─ repository.ts
+│  │  ├─ schema.ts
+│  │  └─ service.ts
+│  ├─ customers
+│  │  ├─ controller.ts
+│  │  ├─ customers.routes.ts
+│  │  ├─ dto
+│  │  │  ├─ create-customer.dto.ts
+│  │  │  ├─ customer-list-query.dto.ts
+│  │  │  ├─ update-customer.dto.ts
+│  │  │  └─ upload-customers.dto.ts
+│  │  ├─ repository.ts
+│  │  └─ service.ts
+│  ├─ dashboard
+│  │  ├─ controller.ts
+│  │  ├─ dashboard.routes.ts
+│  │  ├─ dto
+│  │  │  ├─ contract-by-car-type.dto.ts
+│  │  │  ├─ sales-by-car-type-raw.dto.ts
+│  │  │  ├─ sales-by-car-type.dto.ts
+│  │  │  └─ summary-response.dto.ts
+│  │  ├─ repository.ts
+│  │  └─ service.ts
+│  ├─ index.routes.ts
+│  ├─ main.ts
+│  ├─ middlewares
+│  │  ├─ auth.middleware.ts
+│  │  └─ error.middleware.ts
+│  ├─ uploads
+│  │  ├─ controller.ts
+│  │  ├─ dto
+│  │  │  └─ upload.dto.ts
+│  │  ├─ repository.ts
+│  │  ├─ service.ts
+│  │  └─ uploads.routes.ts
+│  └─ users
+│     ├─ controller.ts
+│     ├─ dto
+│     │  ├─ create-user.dto.ts
+│     │  └─ update-user.dto.ts
+│     ├─ repository.ts
+│     ├─ service.ts
+│     └─ users.routes.ts
+└─ tsconfig.json
+```
 
 ---  
 
